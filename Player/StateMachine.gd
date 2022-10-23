@@ -15,6 +15,7 @@ func _physics_process(delta):
 func _process(delta):
 	if state and state.has_method("process"):
 		state.process(delta)
+	print(state_name)
 
 func _unhandled_input(event):
 	if state and state.has_method("unhandled_input"):

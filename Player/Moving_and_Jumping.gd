@@ -8,7 +8,7 @@ func _ready():
 
 func physics_process(_delta):
 	if not player.is_on_floor():
-		SM.set_state("Coyote")
+		pass
 	else:
 		player.velocity.y = 0
 
