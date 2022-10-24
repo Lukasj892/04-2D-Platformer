@@ -8,13 +8,20 @@ func _ready():
 	
 func start():
 	player.set_animation("Attacking")
-	player.move_speed *= 2
+	player.move_speed *= 1.5 #Increases player speed when attacking.
 
-func _physics_process(_delta):
+func physics_process(_delta):
 	if not player.is_on_floor():
 		SM.set_state("Falling")
+	else:
+		player.velocity.y = 0
 	
-	
+	if player.is_moving():
+		player.velocity += player.move_speed * player.move_vector()
+		player.move_and_slide(player.velocity, Vector2.UP)
+	else:
+		player.velocity = Vector2.ZERO
+		SM.set_state("Idle")
 
 
 
