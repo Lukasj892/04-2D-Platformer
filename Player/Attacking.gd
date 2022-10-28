@@ -25,10 +25,9 @@ func physics_process(_delta):
 
 
 
-
-func DoDamage():
-	pass
-
-
 func _on_AnimatedSprite_animation_finished():
 	SM.set_state("Moving")
+
+
+func _on_DetectEnemy_body_entered(body):
+	body.queue_free()

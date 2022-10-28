@@ -30,12 +30,16 @@ func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
 	
 	if position.y > Global.death_zone:
-		queue_free()
+		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		SM.set_state("Attacking")
 		
 	
+	if SM.state_name == "Attacking":
+		$DetectEnemy/CollisionShape2D.disabled = false
+	else:
+		$DetectEnemy/CollisionShape2D.disabled = true
 
 func is_moving():
 	return true
