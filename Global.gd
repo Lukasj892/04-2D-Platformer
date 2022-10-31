@@ -8,6 +8,8 @@ var fade_out = ""
 
 var death_zone = 1000
 
+var saved_level
+
 func _physics_process(_delta):
 	if fade == null:
 		fade = get_node_or_null("/root/Game/Camera/Fade")
@@ -15,7 +17,7 @@ func _physics_process(_delta):
 		execute_fade_out(fade_out)
 	if fade_in:
 		execute_fade_in()
-		
+	print(saved_level)
 
 func start_fade_in():
 	if fade != null:
@@ -46,3 +48,4 @@ func execute_fade_out(_target):
 func _unhandled_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
+

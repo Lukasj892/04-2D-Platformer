@@ -29,7 +29,7 @@ func DetectTurnAround():
 		else:
 			is_moving_left = true
 		scale.x = -scale.x
-		print("Enemy turn around pls.")
+		#print("Enemy turn around pls.")
 
 
 func _on_DetectPlayer_body_entered(body): #Connected to DetectPlayer (Area2D object)
