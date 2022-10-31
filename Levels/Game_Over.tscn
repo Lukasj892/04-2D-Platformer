@@ -15,9 +15,6 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -44.0
@@ -57,5 +54,6 @@ focus_neighbour_top = NodePath("../Play_Again")
 focus_previous = NodePath("../Play_Again")
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
+
 [connection signal="pressed" from="Play_Again" to="." method="_on_Play_Again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

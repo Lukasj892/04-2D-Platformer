@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Thruster-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/MainMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -44.0
+margin_top = -26.0
+margin_right = 1052.0
+margin_bottom = 642.0
+color = Color( 0.203922, 0.227451, 0.25098, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 246.0
+custom_fonts/font = SubResource( 1 )
+text = "Blade Runner: Godot Version"
+align = 1
+valign = 1
+
+[node name="Play" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -30.0
+margin_right = 100.0
+margin_bottom = 10.0
+text = "PLAY"
+
+[node name="HowTo" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 70.0
+text = "HOW TO PLAY"
+
+[node name="Quit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 90.0
+margin_right = 100.0
+margin_bottom = 130.0
+text = "QUIT"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HowTo" to="." method="_on_HowTo_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
